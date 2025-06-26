@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jairo Herrera - Diseñador UX/UI | Portafolio Profesional</title>
+    <meta name="description" content="Diseñador UX/UI especializado en experiencias digitales claras, funcionales y visualmente atractivas. Aplicante para la Alcaldía de Panamá.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colores principales */
+            --color-primary: #007AFF;
+            --color-secondary: #34C759;
+            --color-warning: #FF9500;
+            --color-danger: #FF3B30;
+            --color-purple: #AF52DE;
+            
+            /* Colores de superficie */
+            --color-background: #F2F2F7;
+            --color-surface: #FFFFFF;
+            --color-surface-elevated: #FFFFFF;
+            
+            /* Colores de texto */
+            --color-text-primary: #1D1D1F;
+            --color-text-secondary: #86868B;
+            --color-text-tertiary: #C7C7CC;
+            
+            /* Espaciado */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --spacing-3xl: 96px;
+            
+            /* Tipografía */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --font-size-4xl: 2.5rem;
+            --font-size-5xl: 3rem;
+            
+            /* Sombras */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.16);
+            
+            /* Bordes */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-2xl: 24px;
+            
+            /* Transiciones */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(134, 134, 139, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition-normal);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+            min-height: 64px;
+        }
+        
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: var(--transition-fast);
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .nav {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav {
+                display: flex;
+                gap: var(--spacing-lg);
+            }
+            
+            .nav a {
+                color: var(--color-text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: var(--font-size-base);
+                transition: var(--transition-fast);
+                position: relative;
+                padding: var(--spacing-xs) 0;
+            }
+            
+            .nav a:hover {
+                color: var(--color-text-primary);
+            }
+            
+            .nav a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--color-primary);
+                transition: var(--transition-normal);
+            }
+            
+            .nav a:hover::after {
+                width: 100%;
+            }
+        }
+        
+        .contact-btn {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .contact-btn:hover {
+            background: #0056CC;
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(0, 122, 255, 0.05) 50%, transparent 100%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: clamp(var(--font-size-3xl), 6vw, var(--font-size-5xl));
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .hero-description {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            min-height: 48px;
+        }
+        
+        .btn-primary:hover {
+            background: #0056CC;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            padding: calc(var(--spacing-sm) - 2px) calc(var(--spacing-lg) - 2px);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            min-height: 48px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: var(--spacing-2xl) 0;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--color-text-tertiary);
+            color: var(--color-text-secondary);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-xl);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .project-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .project-images {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        /* Múltiples imágenes en proyecto */
+        .project-images.multiple {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            height: 300px;
+        }
+        
+        .project-images.triple {
+            grid-template-columns: 1fr 1fr 1fr;
+            height: 280px;
+        }
+        
+        .project-image.small {
+            height: 100%;
+        }
+        
+        .project-info {
+            padding: var(--spacing-lg);
+        }
+        
+        .project-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-primary);
+        }
+        
+        .project-description {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-tag {
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--color-primary);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+        
+        .project-tag.mobile { 
+            background: rgba(52, 199, 89, 0.1); 
+            color: var(--color-secondary); 
+        }
+        
+        .project-tag.web { 
+            background: rgba(255, 149, 0, 0.1); 
+            color: var(--color-warning); 
+        }
+        
+        .project-tag.enterprise { 
+            background: rgba(175, 82, 222, 0.1); 
+            color: var(--color-purple); 
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: var(--spacing-xs);
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .btn-primary-small {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn-primary-small:hover {
+            background: #0056CC;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary-small {
+            background: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+        }
+        
+        .btn-secondary-small:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90%;
+            object-fit: contain;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: var(--radius-lg);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+        
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 16px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: var(--transition-normal);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .modal-prev {
+            left: 20px;
+        }
+        
+        .modal-next {
+            right: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--spacing-3xl) 0;
+            background: var(--color-surface);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+                text-align: center;
+            }
+        }
+        
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-5xl);
+            color: white;
+            font-weight: 700;
+        }
+        
+        .about-text h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-primary);
+        }
+        
+        .about-text p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .contact-content {
+            background: var(--color-surface);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-primary);
+        }
+        
+        .contact-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+        }
+        
+        .contact-form {
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-label {
+            display: block;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 2px solid rgba(134, 134, 139, 0.3);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            font-family: var(--font-family);
+            background: var(--color-surface);
+            transition: var(--transition-fast);
+            min-height: 48px;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            transition: var(--transition-fast);
+        }
+        
+        .contact-link:hover {
+            color: var(--color-primary);
+            background: rgba(0, 122, 255, 0.1);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-text-primary);
+            color: white;
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-text {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .footer-copyright {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: var(--spacing-md);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .hero {
+                padding: var(--spacing-2xl) 0 var(--spacing-xl);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                min-width: auto;
+            }
+            
+            .projects-filter {
+                gap: var(--spacing-xs);
+            }
+            
+            .filter-btn {
+                padding: var(--spacing-xs) var(--spacing-sm);
+                font-size: var(--font-size-xs);
+            }
+            
+            .contact-content {
+                padding: var(--spacing-lg);
+                margin: 0 var(--spacing-sm);
+            }
+            
+            .modal-nav {
+                display: none;
+            }
+            
+            .project-images.triple {
+                grid-template-columns: 1fr 1fr;
+                height: 250px;
+            }
+        }
+        
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Focus states para accesibilidad */
+        .btn-primary:focus,
+        .btn-secondary:focus,
+        .contact-btn:focus,
+        .filter-btn:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#inicio" class="logo">JH</a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#sobre-mi">Sobre mí</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <a href="#contacto" class="contact-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    Contrátame
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Jairo Herrera</h1>
+                <p class="hero-subtitle">Diseñador UX/UI</p>
+                <p class="hero-description">
+                    Especialista en crear experiencias digitales claras, funcionales y visualmente atractivas. 
+                    Con enfoque en interfaces limpias, prototipos funcionales y diseño centrado en el usuario 
+                    para aplicaciones móviles y sitios web.
+                </p>
+                <div class="hero-cta">
+                    <a href="#proyectos" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                        </svg>
+                        Ver Proyectos
+                    </a>
+                    <a href="#contacto" class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Hablemos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Proyectos Destacados</h2>
+            <p class="section-subtitle fade-in">
+                Una selección de trabajos que demuestran mi experiencia en diferentes tipos de productos digitales.
+            </p>
+            
+            <div class="projects-filter fade-in">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Proyecto 1: App de Reservas -->
+                <article class="project-card fade-in" data-category="mobile">
+                    <div class="project-images triple">
+                        <img src="AppReservas-1.png" alt="App de Reservas - Pantalla principal" class="project-image small">
+                        <img src="AppReservas-2.png" alt="App de Reservas - Formulario" class="project-image small">
+                        <img src="AppReservas-3.png" alt="App de Reservas - Navegación" class="project-image small">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">App de Reservas Móvil</h3>
+                        <div class="project-tags">
+                            <span class="project-tag mobile">Mobile</span>
+                            <span class="project-tag">iOS</span>
+                            <span class="project-tag">UX/UI</span>
+                            <span class="project-tag">Prototyping</span>
+                        </div>
+                        <p class="project-description">
+                            Diseño completo de una aplicación móvil para reservas con navegación inferior intuitiva, 
+                            formularios optimizados y flujo de usuario simplificado siguiendo los estándares de iOS 17.
+                        </p>
+                        <div class="project-actions">
+                            <button class="btn-small btn-primary-small" onclick="openMockupModal(0)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="9" cy="9" r="2"/>
+                                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                                </svg>
+                                Ver Mockups
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: SmartBiz Pro -->
+                <article class="project-card fade-in" data-category="enterprise">
+                    <div class="project-images">
+                        <img src="SmartBiz-Renovado.png" alt="SmartBiz Pro - Dashboard empresarial" class="project-image">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SmartBiz Pro – Sistema Empresarial</h3>
+                        <div class="project-tags">
+                            <span class="project-tag enterprise">Enterprise</span>
+                            <span class="project-tag web">Web App</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">SaaS</span>
+                        </div>
+                        <p class="project-description">
+                            Plataforma empresarial completa con dashboard inteligente, gestión de equipos, 
+                            analytics en tiempo real, modo oscuro/claro y experiencia totalmente responsive.
+                        </p>
+                        <div class="project-actions">
+                            <a href="smartbiz.html" target="_blank" class="btn-small btn-primary-small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                                Ver Sitio Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3: Eventos Panamá -->
+                <article class="project-card fade-in" data-category="web">
+                    <div class="project-images multiple">
+                        <img src="mockup_eventos_panama_Claro.png" alt="Eventos Panamá - Modo claro" class="project-image small">
+                        <img src="mockup_eventos_panama_Oscuro.png" alt="Eventos Panamá - Modo oscuro" class="project-image small">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Eventos Panamá</h3>
+                        <div class="project-tags">
+                            <span class="project-tag web">Web Design</span>
+                            <span class="project-tag">Dark Mode</span>
+                            <span class="project-tag">Responsive</span>
+                            <span class="project-tag">Local</span>
+                        </div>
+                        <p class="project-description">
+                            Plataforma para eventos locales con soporte completo de temas claro y oscuro, 
+                            diseño adaptable y optimización para múltiples dispositivos y navegadores.
+                        </p>
+                        <div class="project-actions">
+                            <button class="btn-small btn-primary-small" onclick="openMockupModal(1)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="9" cy="9" r="2"/>
+                                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                                </svg>
+                                Ver Mockups
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 4: TechNova E-commerce -->
+                <article class="project-card fade-in" data-category="web">
+                    <div class="project-images">
+                        <img src="technova-marketplace.png" alt="TechNova - Marketplace Premium" class="project-image">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">TechNova – Marketplace Premium</h3>
+                        <div class="project-tags">
+                            <span class="project-tag web">E-commerce</span>
+                            <span class="project-tag">Marketplace</span>
+                            <span class="project-tag">Responsive</span>
+                            <span class="project-tag">Premium</span>
+                        </div>
+                        <p class="project-description">
+                            Marketplace de comercio electrónico con carrito de compras avanzado, 
+                            carrusel de productos, búsqueda inteligente y experiencia móvil optimizada.
+                        </p>
+                        <div class="project-actions">
+                            <a href="technova.html" target="_blank" class="btn-small btn-primary-small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                                Ver Sitio Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 5: Explora Panamá -->
+                <article class="project-card fade-in" data-category="web">
+                    <div class="project-images">
+                        <img src="explora-panama-tourism.png" alt="Explora Panamá - Plataforma Turística" class="project-image">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Explora Panamá – Turismo Digital</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Tourism</span>
+                            <span class="project-tag web">Landing</span>
+                            <span class="project-tag">Interactive</span>
+                            <span class="project-tag">Panamá</span>
+                        </div>
+                        <p class="project-description">
+                            Plataforma turística inmersiva con destinos interactivos, sistema de reservas integrado, 
+                            galería de imágenes y experiencias únicas que promocionan la belleza de Panamá.
+                        </p>
+                        <div class="project-actions">
+                            <a href="explora-panama.html" target="_blank" class="btn-small btn-primary-small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                                Ver Sitio Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    JH
+                </div>
+                <div class="about-text fade-in">
+                    <h2>Sobre mí</h2>
+                    <p>
+                        Soy un diseñador UX/UI apasionado por crear experiencias digitales que realmente importen. 
+                        Mi enfoque se centra en entender las necesidades del usuario y traducirlas en soluciones 
+                        elegantes y funcionales.
+                    </p>
+                    <p>
+                        Con experiencia en el ecosistema completo de diseño digital, desde la investigación inicial 
+                        hasta la implementación final, me especializo en crear productos que no solo se ven bien, 
+                        sino que funcionan de manera intuitiva.
+                    </p>
+                    <p>
+                        <strong>¿Por qué la Alcaldía de Panamá?</strong> Creo firmemente en el poder del diseño 
+                        para mejorar los servicios públicos y la experiencia ciudadana. Mi objetivo es contribuir 
+                        a la transformación digital del sector público panameño.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2 class="contact-title">¿Listo para crear algo increíble?</h2>
+                <p class="contact-subtitle">
+                    Estoy disponible para nuevos proyectos y oportunidades. 
+                    Conversemos sobre cómo puedo aportar valor a tu equipo.
+                </p>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre completo</label>
+                        <input type="text" id="name" name="name" class="form-input" required placeholder="Tu nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="tu@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required placeholder="¿En qué podemos colaborar?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" required placeholder="Cuéntame sobre tu proyecto o la oportunidad..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" style="width: 100%;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                        </svg>
+                        Enviar mensaje
+                    </button>
+                </form>
+                
+                <div class="contact-links">
+                    <a href="mailto:jairomanuhel@gmail.com" class="contact-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        jairomanuhel@gmail.com
+                    </a>
+                    <a href="tel:+50764735732" class="contact-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +507 6473-5732
+                    </a>
+                    <a href="https://wa.me/50762632267" target="_blank" class="contact-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content fade-in">
+                <h3 class="footer-title">Gracias por visitar mi portafolio</h3>
+                <p class="footer-text">
+                    Diseñado y desarrollado con atención al detalle y pasión por la excelencia. 
+                    Siempre abierto a nuevas oportunidades y colaboraciones.
+                </p>
+                <div class="footer-links">
+                    <a href="#inicio" class="footer-link">Inicio</a>
+                    <a href="#proyectos" class="footer-link">Proyectos</a>
+                    <a href="#sobre-mi" class="footer-link">Sobre mí</a>
+                    <a href="#contacto" class="footer-link">Contacto</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; 2025 Jairo Herrera. Diseñado para la Alcaldía de Panamá con dedicación y profesionalismo.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para ver mockups -->
+    <div id="mockupModal" class="modal">
+        <span class="modal-close" onclick="closeMockupModal()">&times;</span>
+        <button class="modal-nav modal-prev" onclick="changeMockupImage(-1)">&#10094;</button>
+        <img class="modal-content" id="mockupImage" alt="Mockup del proyecto">
+        <button class="modal-nav modal-next" onclick="changeMockupImage(1)">&#10095;</button>
+    </div>
+
+    <script>
+        // Datos de mockups para cada proyecto
+        const mockupsData = [
+            {
+                name: "App de Reservas Móvil",
+                images: ["AppReservas-1.png", "AppReservas-2.png", "AppReservas-3.png"]
+            },
+            {
+                name: "Eventos Panamá",
+                images: ["mockup_eventos_panama_Claro.png", "mockup_eventos_panama_Oscuro.png"]
+            }
+        ];
+
+        let currentMockupProject = 0;
+        let currentMockupIndex = 0;
+
+        // Funciones del modal de mockups
+        function openMockupModal(projectIndex) {
+            console.log('Abriendo modal para proyecto:', projectIndex);
+            
+            if (mockupsData[projectIndex]) {
+                currentMockupProject = projectIndex;
+                currentMockupIndex = 0;
+                
+                const modal = document.getElementById('mockupModal');
+                const modalImage = document.getElementById('mockupImage');
+                
+                modalImage.src = mockupsData[projectIndex].images[0];
+                modal.style.display = 'block';
+                
+                // Prevenir scroll del body
+                document.body.style.overflow = 'hidden';
+                
+                console.log('Modal abierto con imagen:', mockupsData[projectIndex].images[0]);
+            } else {
+                console.error('No se encontraron mockups para el proyecto:', projectIndex);
+            }
+        }
+
+        function closeMockupModal() {
+            const modal = document.getElementById('mockupModal');
+            modal.style.display = 'none';
+            
+            // Restaurar scroll del body
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeMockupImage(direction) {
+            const currentImages = mockupsData[currentMockupProject].images;
+            currentMockupIndex += direction;
+            
+            if (currentMockupIndex >= currentImages.length) {
+                currentMockupIndex = 0;
+            } else if (currentMockupIndex < 0) {
+                currentMockupIndex = currentImages.length - 1;
+            }
+            
+            const modalImage = document.getElementById('mockupImage');
+            modalImage.src = currentImages[currentMockupIndex];
+        }
+
+        // Cerrar modal con ESC y navegación con flechas
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('mockupModal');
+            if (modal.style.display === 'block') {
+                if (e.key === 'Escape') {
+                    closeMockupModal();
+                } else if (e.key === 'ArrowLeft') {
+                    changeMockupImage(-1);
+                } else if (e.key === 'ArrowRight') {
+                    changeMockupImage(1);
+                }
+            }
+        });
+
+        // Cerrar modal al hacer click fuera de la imagen
+        document.getElementById('mockupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMockupModal();
+            }
+        });
+
+        // Filtros de proyectos
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remover clase active de todos los botones
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Agregar clase active al botón clickeado
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animaciones en scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.borderBottom = '1px solid rgba(134, 134, 139, 0.3)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.borderBottom = '1px solid rgba(134, 134, 139, 0.2)';
+            }
+        });
+
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulación de envío
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
+                    <path d="M12 2v6M12 18v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/>
+                </svg>
+                Enviando...
+            `;
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('¡Mensaje enviado correctamente! Te contactaré pronto.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    </script>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</body>
+</html>
